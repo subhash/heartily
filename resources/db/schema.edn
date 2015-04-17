@@ -1,0 +1,20 @@
+[{:db/id #db/id[:db.part/db]
+  :db/ident :track-point/altitude
+  :db/valueType :db.type/float
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+ {:db/id #db/id[:db.part/db]
+  :db/ident :track-point/latitude
+  :db/valueType :db.type/float
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+ {:db/id #db/id[:db.part/db]
+  :db/ident :track-point/longitude
+  :db/valueType :db.type/float
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+ {:db/id #db/id[:db.part/db]
+  :db/ident :track-point/speed
+  :db/valueType :db.type/float
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}]
