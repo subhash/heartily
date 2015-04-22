@@ -11,6 +11,7 @@
 * Click on the editable box and press "Shift+Enter". The definition will execute
 * In the next editable boxes that pop, issue the follow commands one by one and press "Shift+Enter" to execute and a graph will emerge
 ```clojure
+(use 'heartily.core)
 (def w1 (load-workout "/Users/subhash/Downloads/trekking.xml"))
 (def w2 (load-workout "/Users/subhash/Downloads/trekking.xml"))
 (def hr1 (heart-rates w1))
