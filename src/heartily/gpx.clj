@@ -1,6 +1,6 @@
 (ns heartily.gpx
   (:require [clojure.xml :as xml]
-            [clojure.zip :use [xml-zip down right node]]
+            [clojure.zip :refer [xml-zip down right node]]
             [datomic.api :as d]))
 
 
