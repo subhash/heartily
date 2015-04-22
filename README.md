@@ -6,7 +6,4 @@
 ```clojure
 heartily.core=> (load-gpx "/Users/subhash/Downloads/trekking.xml")
 ```
-* Test if data is loaded
-```clojure
-heartily.core=> (hdb/all-altitudes)
-```
+* All the tracks and track-points are dumped to the console for testing
