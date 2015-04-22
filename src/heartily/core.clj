@@ -4,9 +4,10 @@
 
 (defn load-gpx [gpxfile]
   (let [data (gpx/load-data gpxfile)
-        trkpts (gpx/find-trkpts data)]
+        trk (gpx/find-trk data)]
     (hdb/init)
-    (hdb/load-trkpts trkpts)))
+    (hdb/load-trk trk)
+    (hdb/dump-trk)))
 
 
 

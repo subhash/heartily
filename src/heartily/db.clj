@@ -14,14 +14,14 @@
     (d/q '[:find ?n :where [:db.part/db :db.install/attribute ?a] [?a :db/ident ?n]] (d/db conn))))
 
 
-(defn load-trkpts [t]
-  (let [conn (d/connect uri)
-        data (map #(merge % {:db/id (d/tempid :db.part/user)}) t)
-        foo (println (first data))]
-    @(d/transact conn data)))
-
-(defn all-altitudes []
+(defn load-trk [t]
   (let [conn (d/connect uri)]
-    (d/q '[:find ?a :where [?e :track-point/altitude ?a]] (d/db conn))))
+    @(d/transact conn [t])))
+
+(defn dump-trk []
+  (let [conn (d/connect uri)]
+    (d/q '[:find (pull ?a [* {:track/track-points [*]}]) :where [?a :track/name ?e]] (d/db conn))))
+
+
 
 

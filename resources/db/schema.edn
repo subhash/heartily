@@ -1,4 +1,17 @@
-[{:db/id #db/id[:db.part/db]
+[;track
+ {:db/id #db/id[:db.part/db]
+  :db/ident :track/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+ {:db/id #db/id[:db.part/db]
+  :db/ident :track/track-points
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/many
+  :db.install/_attribute :db.part/db}
+
+ ; track-point
+ {:db/id #db/id[:db.part/db]
   :db/ident :track-point/altitude
   :db/valueType :db.type/float
   :db/cardinality :db.cardinality/one
@@ -14,7 +27,17 @@
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
+  :db/ident :track-point/heart-rate
+  :db/valueType :db.type/float
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+ {:db/id #db/id[:db.part/db]
   :db/ident :track-point/speed
   :db/valueType :db.type/float
   :db/cardinality :db.cardinality/one
-  :db.install/_attribute :db.part/db}]
+  :db.install/_attribute :db.part/db}
+ {:db/id #db/id[:db.part/db]
+  :db/ident :track-point/vertical-speed
+  :db/valueType :db.type/float
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db} ]
