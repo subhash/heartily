@@ -7,20 +7,15 @@
 (def schema-tx
   (read-string (slurp (io/resource "db/schema.edn"))))
 
-(defn init []
-  (d/create-database uri)
-  (let [conn (d/connect uri)]
-    @(d/transact conn schema-tx)
-    (d/q '[:find ?n :where [:db.part/db :db.install/attribute ?a] [?a :db/ident ?n]] (d/db conn))))
+(d/create-database uri)
 
+(def conn (d/connect uri))
 
-(defn load-trk [t]
-  (let [conn (d/connect uri)]
-    @(d/transact conn [t])))
+@(d/transact conn schema-tx)
 
-(defn dump-trk []
-  (let [conn (d/connect uri)]
-    (d/q '[:find (pull ?a [* {:track/track-points [*]}]) :where [?a :track/name ?e]] (d/db conn))))
+(defn save-activity [a]
+  @(d/transact conn [a]))
+
 
 
 

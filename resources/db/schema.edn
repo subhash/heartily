@@ -1,4 +1,16 @@
-[;track
+[;activity
+ {:db/id #db/id[:db.part/db]
+  :db/ident :activity/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+ {:db/id #db/id[:db.part/db]
+  :db/ident :activity/track
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+
+ ;track
  {:db/id #db/id[:db.part/db]
   :db/ident :track/name
   :db/valueType :db.type/string
@@ -28,7 +40,7 @@
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
   :db/ident :track-point/heart-rate
-  :db/valueType :db.type/float
+  :db/valueType :db.type/long
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
