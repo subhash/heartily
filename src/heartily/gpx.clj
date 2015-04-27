@@ -26,7 +26,7 @@
 
 (defn gpx->map [name file]
   {:activity/name name
-   :activity/track (-> (java.io.File. file) xml/parse xml-zip track->map)
+   :activity/track (-> file xml/parse xml-zip track->map)
    :db/id (d/tempid :db.part/user)})
 
 
