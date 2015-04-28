@@ -6,8 +6,7 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/data.zip "0.1.1"]
                  [com.datomic/datomic-pro "0.9.5130"]]
-  :plugins [[lein-gorilla "0.3.4"]]
+  :plugins [[lein-gorilla "0.3.4"] [lein-vanity "0.2.0"]]
   :source-paths ["src/"]
-  ;:main ^:skip-aot gorilla-test.core
   :main ^{:skip-aot true} heartily.core
 )

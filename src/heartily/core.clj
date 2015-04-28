@@ -12,8 +12,8 @@
         :when (re-matches #".*\.gpx" fname)]
     (store-activity fname fpath)))
 
-; heart beats sorted by time
 (defn heart-beats-for [activity]
+  "heart beats sorted by time"
   (->> (d/q '[:find ?tm ?hr
               :in $ ?n
               :where
@@ -27,8 +27,8 @@
        (sort-by first)
        (map second)))
 
-; vectors of avg max and min heart beats sorted by activity time
 (defn heart-beat-stats []
+  "Vectors of min avg and max heart beats sorted by activity time"
   (->> (d/q '[:find ?n (min ?tm) (min ?hr) (avg ?hr) (max ?hr)
               :where
               [?a :activity/name ?n]
@@ -41,6 +41,36 @@
        (sort-by second)
        (map (partial drop 2))
        (apply interleave)
-       (partition 3)))
+       (#(partition (/ (count %) 3) %))
+       ))
+
+(defn heart-beat-std []
+  (->> (d/q '[:find ?n (min ?tm) (stddev ?hr)
+              :where
+              [?a :activity/name ?n]
+              [?a :activity/track ?t]
+              [?t :track/track-points ?tp]
+              [?tp :track-point/heart-rate ?hr]
+              [?tp :track-point/time ?tt]
+              [(.getTime ?tt) ?tm]]
+            (d/db hdb/conn))
+       (sort-by second)
+       (map (partial drop 2))
+       ))
+
+
+(defn activity-stats []
+  (->> (d/q '[:find ?n (min ?tm) (max ?tm)
+              :where
+              [?a :activity/name ?n]
+              [?a :activity/track ?t]
+              [?t :track/track-points ?tp]
+              [?tp :track-point/heart-rate ?hr]
+              [?tp :track-point/time ?tt]
+              [(.getTime ?tt) ?tm]]
+            (d/db hdb/conn))
+       (sort-by second)
+       (map (fn [[_ a b]] (/ (- b a) 60000)))
+       (filter (partial < 5))))
 
 
