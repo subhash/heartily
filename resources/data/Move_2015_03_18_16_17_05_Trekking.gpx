@@ -1,0 +1,663 @@
+<gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd" xmlns:gpxdata="http://www.topografix.com/GPX/1/0" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" version="1.1" creator="Movescount - http://www.movescount.com" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk>
+    <name>Move</name>
+    <trkseg>
+      <trkpt lat="42.316535" lon="-122.953075">
+        <ele>623</ele>
+        <time>2015-03-18T10:47:56.640Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>104</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>24.858489465174</gpxdata:temp>
+          <gpxdata:distance>83</gpxdata:distance>
+          <gpxdata:altitude>623</gpxdata:altitude>
+          <gpxdata:energy>7</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.67924484729496</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.31654" lon="-122.954086">
+        <ele>623</ele>
+        <time>2015-03-18T10:48:57.680Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>103</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>26</gpxdata:temp>
+          <gpxdata:distance>167.500022857143</gpxdata:distance>
+          <gpxdata:altitude>623</gpxdata:altitude>
+          <gpxdata:energy>6.90000009536743</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.58125030508586</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.31647" lon="-122.955039">
+        <ele>623</ele>
+        <time>2015-03-18T10:49:58.580Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>102</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>27.1000003814697</gpxdata:temp>
+          <gpxdata:distance>249</gpxdata:distance>
+          <gpxdata:altitude>623</gpxdata:altitude>
+          <gpxdata:energy>6.69999980926514</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.60000002384186</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.316419" lon="-122.956008">
+        <ele>623</ele>
+        <time>2015-03-18T10:50:58.580Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>109</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>27.7000007629395</gpxdata:temp>
+          <gpxdata:distance>330</gpxdata:distance>
+          <gpxdata:altitude>623</gpxdata:altitude>
+          <gpxdata:energy>7.30000019073486</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.01900032453003</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.316323" lon="-122.957055">
+        <ele>623</ele>
+        <time>2015-03-18T10:51:58.680Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>114</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>28.1000003814697</gpxdata:temp>
+          <gpxdata:distance>421</gpxdata:distance>
+          <gpxdata:altitude>623</gpxdata:altitude>
+          <gpxdata:energy>8.10000038146973</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.29999995231628</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.316346" lon="-122.958147">
+        <ele>623</ele>
+        <time>2015-03-18T10:52:58.680Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>105</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>28.6000003814697</gpxdata:temp>
+          <gpxdata:distance>514</gpxdata:distance>
+          <gpxdata:altitude>623</gpxdata:altitude>
+          <gpxdata:energy>7.19999980926514</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.79999995231628</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.316259" lon="-122.959139">
+        <ele>623</ele>
+        <time>2015-03-18T10:53:58.680Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>106</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>29.2000007629395</gpxdata:temp>
+          <gpxdata:distance>598.512424495668</gpxdata:distance>
+          <gpxdata:altitude>623</gpxdata:altitude>
+          <gpxdata:energy>6.59999990463257</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.39999997615814</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.316256" lon="-122.960213">
+        <ele>635</ele>
+        <time>2015-03-18T10:54:59.580Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>119</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>29.7000007629395</gpxdata:temp>
+          <gpxdata:distance>687.811953463615</gpxdata:distance>
+          <gpxdata:altitude>635</gpxdata:altitude>
+          <gpxdata:energy>7.80000019073486</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.5</gpxdata:speed>
+          <gpxdata:verticalSpeed>0.0799999982118607</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.315873" lon="-122.961037">
+        <ele>637</ele>
+        <time>2015-03-18T10:55:59.680Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>116</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>29.8999996185303</gpxdata:temp>
+          <gpxdata:distance>773</gpxdata:distance>
+          <gpxdata:altitude>637</gpxdata:altitude>
+          <gpxdata:energy>8.10000038146973</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.68712903353856</gpxdata:speed>
+          <gpxdata:verticalSpeed>0.0299999993294477</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.315677" lon="-122.961936">
+        <ele>637</ele>
+        <time>2015-03-18T10:56:59.680Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>108</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>30.1000003814697</gpxdata:temp>
+          <gpxdata:distance>854</gpxdata:distance>
+          <gpxdata:altitude>637</gpxdata:altitude>
+          <gpxdata:energy>6.69999980926514</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.315496" lon="-122.963025">
+        <ele>638</ele>
+        <time>2015-03-18T10:57:59.680Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>109</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>30.2999992370605</gpxdata:temp>
+          <gpxdata:distance>950</gpxdata:distance>
+          <gpxdata:altitude>638</gpxdata:altitude>
+          <gpxdata:energy>6.59999990463257</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.39999997615814</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.315306" lon="-122.963941">
+        <ele>639</ele>
+        <time>2015-03-18T10:59:00.520Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>111</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>30.6000003814697</gpxdata:temp>
+          <gpxdata:distance>1049</gpxdata:distance>
+          <gpxdata:altitude>639</gpxdata:altitude>
+          <gpxdata:energy>7.09999990463257</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>2</gpxdata:speed>
+          <gpxdata:verticalSpeed>0.0799999982118607</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.315237" lon="-122.963956">
+        <ele>639</ele>
+        <time>2015-03-18T10:59:08.080Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>110</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>30.6000003814697</gpxdata:temp>
+          <gpxdata:distance>1049</gpxdata:distance>
+          <gpxdata:altitude>639</gpxdata:altitude>
+          <gpxdata:energy>7</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>2</gpxdata:speed>
+          <gpxdata:verticalSpeed>0.0299999993294477</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.314813" lon="-122.964601">
+        <ele>641</ele>
+        <time>2015-03-18T11:00:06.670Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>113</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>30.8999996185303</gpxdata:temp>
+          <gpxdata:distance>1119.58829434796</gpxdata:distance>
+          <gpxdata:altitude>641</gpxdata:altitude>
+          <gpxdata:energy>7</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>2</gpxdata:speed>
+          <gpxdata:verticalSpeed>0.0299999993294477</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.314484" lon="-122.965332">
+        <ele>642</ele>
+        <time>2015-03-18T11:01:08.580Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>114</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>31.1000003814697</gpxdata:temp>
+          <gpxdata:distance>1179.6248</gpxdata:distance>
+          <gpxdata:altitude>642</gpxdata:altitude>
+          <gpxdata:energy>7.5</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.20000004768372</gpxdata:speed>
+          <gpxdata:verticalSpeed>0.0299999993294477</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.313928" lon="-122.965843">
+        <ele>643</ele>
+        <time>2015-03-18T11:02:08.580Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>111</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>30.7999992370605</gpxdata:temp>
+          <gpxdata:distance>1259.14770552676</gpxdata:distance>
+          <gpxdata:altitude>643</gpxdata:altitude>
+          <gpxdata:energy>7</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.20000004768372</gpxdata:speed>
+          <gpxdata:verticalSpeed>0.0299999993294477</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.313972" lon="-122.966613">
+        <ele>644</ele>
+        <time>2015-03-18T11:03:06.580Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>114</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>30.6000003814697</gpxdata:temp>
+          <gpxdata:distance>1324.32974188818</gpxdata:distance>
+          <gpxdata:altitude>644</gpxdata:altitude>
+          <gpxdata:energy>7.30000019073486</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.20000004768372</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.314276" lon="-122.967654">
+        <ele>646</ele>
+        <time>2015-03-18T11:04:08.280Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>116</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>30.8999996185303</gpxdata:temp>
+          <gpxdata:distance>1383.0797056</gpxdata:distance>
+          <gpxdata:altitude>646</gpxdata:altitude>
+          <gpxdata:energy>7.19999980926514</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.10000002384186</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.314436" lon="-122.968494">
+        <ele>648</ele>
+        <time>2015-03-18T11:05:06.560Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>112</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>31.2999992370605</gpxdata:temp>
+          <gpxdata:distance>1485.53435056459</gpxdata:distance>
+          <gpxdata:altitude>648</gpxdata:altitude>
+          <gpxdata:energy>6.90000009536743</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.39999997615814</gpxdata:speed>
+          <gpxdata:verticalSpeed>0.034356520605526</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.314176" lon="-122.968642">
+        <ele>651</ele>
+        <time>2015-03-18T11:08:59.680Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>100</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>30.5</gpxdata:temp>
+          <gpxdata:distance>1501</gpxdata:distance>
+          <gpxdata:altitude>651</gpxdata:altitude>
+          <gpxdata:energy>5.59999990463257</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>0.700877114205459</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.314329" lon="-122.967902">
+        <ele>648</ele>
+        <time>2015-03-18T11:10:02.180Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>100</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>30.2999992370605</gpxdata:temp>
+          <gpxdata:distance>1526.8297984</gpxdata:distance>
+          <gpxdata:altitude>648</gpxdata:altitude>
+          <gpxdata:energy>5.09999990463257</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>0.245998089775085</gpxdata:speed>
+          <gpxdata:verticalSpeed>-0.0299999993294477</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.313959" lon="-122.966951">
+        <ele>646</ele>
+        <time>2015-03-18T11:11:03.080Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>103</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>30.1000003814697</gpxdata:temp>
+          <gpxdata:distance>1590.33661607586</gpxdata:distance>
+          <gpxdata:altitude>646</gpxdata:altitude>
+          <gpxdata:energy>5.30000019073486</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1</gpxdata:speed>
+          <gpxdata:verticalSpeed>-0.0500000007450581</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.313799" lon="-122.965871">
+        <ele>645</ele>
+        <time>2015-03-18T11:11:58.180Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>97</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>29.7000007629395</gpxdata:temp>
+          <gpxdata:distance>1690.3097088</gpxdata:distance>
+          <gpxdata:altitude>645</gpxdata:altitude>
+          <gpxdata:energy>4.5</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.39999997615814</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.314446" lon="-122.965512">
+        <ele>644</ele>
+        <time>2015-03-18T11:13:02.080Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>96</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>29.2000007629395</gpxdata:temp>
+          <gpxdata:distance>1766.78561166114</gpxdata:distance>
+          <gpxdata:altitude>644</gpxdata:altitude>
+          <gpxdata:energy>4.69999980926514</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.5</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.314096" lon="-122.964412">
+        <ele>642</ele>
+        <time>2015-03-18T11:13:57.580Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>99</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>28.7999992370605</gpxdata:temp>
+          <gpxdata:distance>1900.39723214965</gpxdata:distance>
+          <gpxdata:altitude>642</gpxdata:altitude>
+          <gpxdata:energy>4.59999990463257</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.29999995231628</gpxdata:speed>
+          <gpxdata:verticalSpeed>-0.0799999982118607</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.314811" lon="-122.964216">
+        <ele>642</ele>
+        <time>2015-03-18T11:14:57.580Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>101</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>28.3999996185303</gpxdata:temp>
+          <gpxdata:distance>1984.9613717588</gpxdata:distance>
+          <gpxdata:altitude>642</gpxdata:altitude>
+          <gpxdata:energy>4.69999980926514</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.70000004768372</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.315323" lon="-122.963543">
+        <ele>640</ele>
+        <time>2015-03-18T11:15:57.560Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>103</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>28.2999992370605</gpxdata:temp>
+          <gpxdata:distance>2063.57470914759</gpxdata:distance>
+          <gpxdata:altitude>640</gpxdata:altitude>
+          <gpxdata:energy>5</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.39999997615814</gpxdata:speed>
+          <gpxdata:verticalSpeed>-0.0299999993294477</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.315608" lon="-122.962759">
+        <ele>639</ele>
+        <time>2015-03-18T11:16:59.800Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>103</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>28.1000003814697</gpxdata:temp>
+          <gpxdata:distance>2082.45500620604</gpxdata:distance>
+          <gpxdata:altitude>639</gpxdata:altitude>
+          <gpxdata:energy>4.90000009536743</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.39999997615814</gpxdata:speed>
+          <gpxdata:verticalSpeed>-0.0299999993294477</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.31586" lon="-122.961714">
+        <ele>638</ele>
+        <time>2015-03-18T11:18:00.050Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>103</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>27.7000007629395</gpxdata:temp>
+          <gpxdata:distance>2174.06336043139</gpxdata:distance>
+          <gpxdata:altitude>638</gpxdata:altitude>
+          <gpxdata:energy>5.09999990463257</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.29999995231628</gpxdata:speed>
+          <gpxdata:verticalSpeed>-0.0299999993294477</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.315955" lon="-122.960776">
+        <ele>639</ele>
+        <time>2015-03-18T11:18:57.680Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>108</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>27.2000007629395</gpxdata:temp>
+          <gpxdata:distance>2306.37522285714</gpxdata:distance>
+          <gpxdata:altitude>639</gpxdata:altitude>
+          <gpxdata:energy>5.80000019073486</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.39999997615814</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.316306" lon="-122.959943">
+        <ele>636</ele>
+        <time>2015-03-18T11:19:59.800Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>102</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>27</gpxdata:temp>
+          <gpxdata:distance>2322.59646514274</gpxdata:distance>
+          <gpxdata:altitude>636</gpxdata:altitude>
+          <gpxdata:energy>5</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.39999997615814</gpxdata:speed>
+          <gpxdata:verticalSpeed>-0.0799999982118607</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.316196" lon="-122.958983">
+        <ele>631</ele>
+        <time>2015-03-18T11:20:57.680Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>103</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>26.7999992370605</gpxdata:temp>
+          <gpxdata:distance>2465.58562714053</gpxdata:distance>
+          <gpxdata:altitude>631</gpxdata:altitude>
+          <gpxdata:energy>5.19999980926514</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.29999995231628</gpxdata:speed>
+          <gpxdata:verticalSpeed>-0.0299999993294477</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.316361" lon="-122.957999">
+        <ele>628</ele>
+        <time>2015-03-18T11:21:57.680Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>105</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>26.3999996185303</gpxdata:temp>
+          <gpxdata:distance>2547.43773714286</gpxdata:distance>
+          <gpxdata:altitude>628</gpxdata:altitude>
+          <gpxdata:energy>5.30000019073486</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.39999997615814</gpxdata:speed>
+          <gpxdata:verticalSpeed>-0.0799999982118607</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.316514" lon="-122.95686">
+        <ele>627</ele>
+        <time>2015-03-18T11:22:57.670Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>108</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>26.1000003814697</gpxdata:temp>
+          <gpxdata:distance>2647.00084885068</gpxdata:distance>
+          <gpxdata:altitude>627</gpxdata:altitude>
+          <gpxdata:energy>5.69999980926514</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.39999997615814</gpxdata:speed>
+          <gpxdata:verticalSpeed>-0.0299999993294477</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.31655" lon="-122.955808">
+        <ele>626</ele>
+        <time>2015-03-18T11:23:59.080Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>107</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>25.8999996185303</gpxdata:temp>
+          <gpxdata:distance>2683.4848143982</gpxdata:distance>
+          <gpxdata:altitude>626</gpxdata:altitude>
+          <gpxdata:energy>5.30000019073486</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.5</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.316546" lon="-122.954782">
+        <ele>625</ele>
+        <time>2015-03-18T11:24:59.580Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>105</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>25.7999992370605</gpxdata:temp>
+          <gpxdata:distance>2811.70625439213</gpxdata:distance>
+          <gpxdata:altitude>625</gpxdata:altitude>
+          <gpxdata:energy>5.09999990463257</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.39999997615814</gpxdata:speed>
+          <gpxdata:verticalSpeed>-0.0299999993294477</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.316546" lon="-122.953784">
+        <ele>624</ele>
+        <time>2015-03-18T11:25:59.080Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>108</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>25.6000003814697</gpxdata:temp>
+          <gpxdata:distance>2853.02016989256</gpxdata:distance>
+          <gpxdata:altitude>624</gpxdata:altitude>
+          <gpxdata:energy>5.5</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.39999997615814</gpxdata:speed>
+          <gpxdata:verticalSpeed>-0.0299999993294477</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.316391" lon="-122.953473">
+        <ele>624</ele>
+        <time>2015-03-18T11:26:57.580Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>104</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>25.3999996185303</gpxdata:temp>
+          <gpxdata:distance>2935.86175956201</gpxdata:distance>
+          <gpxdata:altitude>624</gpxdata:altitude>
+          <gpxdata:energy>4.90000009536743</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>1.39999997615814</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+      <trkpt lat="42.316916" lon="-122.952694">
+        <ele>623</ele>
+        <time>2015-03-18T11:27:56.980Z</time>
+        <extensions>
+          <gpxtpx:TrackPointExtension xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1">
+            <gpxtpx:hr>101</gpxtpx:hr>
+          </gpxtpx:TrackPointExtension>
+          <gpxdata:temp>25.2999992370605</gpxdata:temp>
+          <gpxdata:distance>2960.2697216</gpxdata:distance>
+          <gpxdata:altitude>623</gpxdata:altitude>
+          <gpxdata:energy>4.30000019073486</gpxdata:energy>
+          <gpxdata:seaLevelPressure>1041</gpxdata:seaLevelPressure>
+          <gpxdata:speed>0.600000023841858</gpxdata:speed>
+          <gpxdata:verticalSpeed>0</gpxdata:verticalSpeed>
+        </extensions>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <extensions>
+    <lap xmlns="http://www.cluetrust.com/XML/GPXDATA/1/0">
+      <index>1</index>
+      <startTime>2015-03-18T10:47:05.000Z</startTime>
+      <elapsedTime>0</elapsedTime>
+      <distance>0</distance>
+    </lap>
+    <lap xmlns="http://www.cluetrust.com/XML/GPXDATA/1/0">
+      <index>2</index>
+      <startTime>2015-03-18T10:47:05.000Z</startTime>
+      <elapsedTime>0</elapsedTime>
+      <distance>0</distance>
+    </lap>
+    <lap xmlns="http://www.cluetrust.com/XML/GPXDATA/1/0">
+      <index>3</index>
+      <startTime>2015-03-18T11:05:34.623Z</startTime>
+      <elapsedTime>1110</elapsedTime>
+      <distance>1501</distance>
+    </lap>
+    <lap xmlns="http://www.cluetrust.com/XML/GPXDATA/1/0">
+      <index>4</index>
+      <startTime>2015-03-18T11:08:55.570Z</startTime>
+      <elapsedTime>201</elapsedTime>
+      <distance>0</distance>
+    </lap>
+    <lap xmlns="http://www.cluetrust.com/XML/GPXDATA/1/0">
+      <index>5</index>
+      <startTime>2015-03-18T11:28:31.337Z</startTime>
+      <elapsedTime>1176</elapsedTime>
+      <distance>1528</distance>
+    </lap>
+  </extensions>
+</gpx>

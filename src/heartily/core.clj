@@ -22,7 +22,7 @@
               [?t :track/track-points ?tp]
               [?tp :track-point/heart-rate ?hr]
               [?tp :track-point/time ?tt]
-              [(.getTime ?tt) ?tm]]
+              [(.getTime ^java.util.Date ?tt) ?tm]]
        (d/db hdb/conn) activity)
        (sort-by first)
        (map second)))
@@ -36,13 +36,11 @@
               [?t :track/track-points ?tp]
               [?tp :track-point/heart-rate ?hr]
               [?tp :track-point/time ?tt]
-              [(.getTime ?tt) ?tm]]
+              [(.getTime ^java.util.Date ?tt) ?tm]]
             (d/db hdb/conn))
        (sort-by second)
        (map (partial drop 2))
-       (apply interleave)
-       (#(partition (/ (count %) 3) %))
-       ))
+       (apply map vector)))
 
 (defn heart-beat-std []
   (->> (d/q '[:find ?n (min ?tm) (stddev ?hr)
@@ -52,11 +50,10 @@
               [?t :track/track-points ?tp]
               [?tp :track-point/heart-rate ?hr]
               [?tp :track-point/time ?tt]
-              [(.getTime ?tt) ?tm]]
+              [(.getTime ^java.util.Date ?tt) ?tm]]
             (d/db hdb/conn))
        (sort-by second)
-       (map (partial drop 2))
-       ))
+       (map (partial drop 2))))
 
 
 (defn activity-stats []
@@ -67,7 +64,7 @@
               [?t :track/track-points ?tp]
               [?tp :track-point/heart-rate ?hr]
               [?tp :track-point/time ?tt]
-              [(.getTime ?tt) ?tm]]
+              [(.getTime ^java.util.Date ?tt) ?tm]]
             (d/db hdb/conn))
        (sort-by second)
        (map (fn [[_ a b]] (/ (- b a) 60000)))
