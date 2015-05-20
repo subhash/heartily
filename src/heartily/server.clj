@@ -9,6 +9,21 @@
             [cheshire.core :refer [parse-string generate-string]]
             [clojure.pprint :refer [pprint]]))
 
+(defn save-token [{:keys [params session]}]
+  (let [access-token (google-access-token params)
+        session (assoc session :access-token access-token)]
+    (-> (resp/redirect "/" )
+        (assoc :session session))))
+
+(defn logout [{session :session}]
+  (-> (resp/redirect "/")
+      (assoc :session (dissoc session :access-token) )))
+
+(defn remove-data-source [access-token]
+  (oauth2/delete
+   "https://www.googleapis.com/fitness/v1/users/me/dataSources/derived:com.google.step_count.delta:776188546157:"
+   {:oauth2 access-token}))
+
 (defn create-data-source [access-token]
   (let [uri "https://www.googleapis.com/fitness/v1/users/me/dataSources"
         body {:dataStreamId "raw:com.google.heart_rate.bpm:776188546157:"
@@ -21,19 +36,12 @@
                       :body (generate-string body)
                       :headers {"Content-Type" "application/json" "encoding" "utf-8"}})))
 
-(defn save-token [{:keys [params session]}]
-  (let [access-token (google-access-token params)
-        session (assoc session :access-token access-token)]
-    ;(create-data-source access-token)
-    (-> (resp/redirect "/dataSources" )
-        (assoc :session session))))
+(defn initialize [{{access-token :access-token} :session}]
+  (create-data-source access-token)
+  (resp/redirect "/"))
 
-(defn logout [{session :session}]
-  (-> (resp/redirect "/")
-      (assoc :session (dissoc session :access-token) )))
-
-(defn get-data-sources [{{:keys [access-token]} :session}]
-  (let [response (google-get "https://www.googleapis.com/fitness/v1/users/me/dataSources" access-token)]
+(defn get-stuff [access-token url]
+  (let [response (google-get url access-token)]
     (str "<pre>" (with-out-str (pprint (parse-string (:body response)))) "</pre>")))
 
 (defroutes app-routes
@@ -43,7 +51,9 @@
          (views/login-page (google-auth-uri))))
   (GET "/oauth2_callback" [] save-token)
   (GET "/logout" [] logout)
-  (GET "/dataSources" [] get-data-sources)
+  (GET "/initialize" [] initialize)
+  (GET "/fit" {{:keys [access-token]} :session {url :url} :params}
+       (get-stuff access-token (str "https://www.googleapis.com/fitness/v1/users/me" url)))
   (route/resources "/")
   (route/not-found "Not Found"))
 
