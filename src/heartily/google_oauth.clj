@@ -9,7 +9,9 @@
          :client-id "776188546157-5btudf4ic02tk5vsh6tdp72dpoi54b3v.apps.googleusercontent.com"
          :client-secret "Fhf-_ms1QH43MOH1CkZcxvt3"
          :access-query-param :access_token
-         :scope ["https://www.googleapis.com/auth/fitness.activity.write"]
+         :scope ["https://www.googleapis.com/auth/fitness.activity.write"
+                 "https://www.googleapis.com/auth/fitness.body.write"
+                 "https://www.googleapis.com/auth/fitness.location.write"]
          :grant-type "authorization_code"
          :access-type "offline"
          :approval_prompt "force"})
@@ -29,6 +31,3 @@
 
 
 
-;; Redirect them to (:uri auth-req)
-
-;; When they comeback to /authentication/callback
