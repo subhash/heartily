@@ -1,7 +1,14 @@
 (ns heartily.google-oauth
-  (:require [clj-oauth2.client :as oauth2]))
+  (:require [clj-oauth2.client :as oauth2]
+            [cheshire.core :refer [parse-string generate-string]]
+            [clojure.pprint :refer [pprint]]))
 
 (def login-uri "https://accounts.google.com")
+(def fit-uri "https://www.googleapis.com/fitness/v1/users/me")
+(def user-uri "https://www.googleapis.com/oauth2/v1/userinfo")
+(def datasource-uri (str fit-uri "/dataSources"))
+(def hr-datastream-id "raw:com.google.heart_rate.bpm:776188546157:")
+
 (def google-com-oauth2
         {:authorization-uri (str login-uri "/o/oauth2/auth")
          :access-token-uri (str login-uri "/o/oauth2/token")
@@ -11,23 +18,48 @@
          :access-query-param :access_token
          :scope ["https://www.googleapis.com/auth/fitness.activity.write"
                  "https://www.googleapis.com/auth/fitness.body.write"
-                 "https://www.googleapis.com/auth/fitness.location.write"]
+                 "https://www.googleapis.com/auth/fitness.location.write"
+                 "https://www.googleapis.com/auth/userinfo.email"]
          :grant-type "authorization_code"
          :access-type "offline"
          :approval_prompt "force"})
 
 (def auth-req (oauth2/make-auth-request google-com-oauth2))
 
-(defn google-auth-uri []
-  (:uri auth-req))
-
-(defn google-get [uri access-token]
-  (let [response (oauth2/get uri {:oauth2 access-token})]
-    response))
-
 (defn google-access-token [params]
-  (println "access token")
   (oauth2/get-access-token google-com-oauth2 params auth-req))
+
+(defn get-fit-url [access-token url]
+  (let [response (oauth2/get (str fit-uri url) {:oauth2 access-token})]
+    (str "<pre>" (with-out-str (pprint (parse-string (:body response)))) "</pre>")))
+
+(defn get-user-email [access-token]
+  (let [response (oauth2/get user-uri {:oauth2 access-token})]
+    (-> (:body response) parse-string (get "email"))))
+
+(defn list-data-sources [access-token]
+  (let [response (oauth2/get datasource-uri {:oauth2 access-token})]
+    (get (parse-string (:body response)) "dataSource")))
+
+(defn get-hr-datastream [access-token]
+  (some #(when (= hr-datastream-id (% "dataStreamId")) %)
+        (list-data-sources access-token)))
+
+(defn create-hr-datastream [access-token]
+  (let [body {:dataStreamId hr-datastream-id
+              :dataStreamName ""
+              :name "Heartily Import"
+              :type "raw"
+              :application {:name "Heartily"}
+              :dataType {:name "com.google.heart_rate.bpm" :field [{:name "bpm" :format "floatPoint"}]}}]
+    (oauth2/post datasource-uri {:oauth2 access-token
+                      :body (generate-string body)
+                      :headers {"Content-Type" "application/json" "encoding" "utf-8"}})))
+
+(defn remove-hr-datastream [access-token]
+  (oauth2/delete
+   (str datasource-uri "/" hr-datastream-id)
+   {:oauth2 access-token}))
 
 
 
