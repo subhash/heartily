@@ -1,13 +1,15 @@
 (ns heartily.google-oauth
   (:require [clj-oauth2.client :as oauth2]
             [cheshire.core :refer [parse-string generate-string]]
-            [clojure.pprint :refer [pprint]]))
+            [clojure.pprint :refer [pprint]]
+            [clj-http.client :as http]))
 
 (def login-uri "https://accounts.google.com")
 (def fit-uri "https://www.googleapis.com/fitness/v1/users/me")
 (def user-uri "https://www.googleapis.com/oauth2/v1/userinfo")
 (def datasource-uri (str fit-uri "/dataSources"))
 (def hr-datastream-id "raw:com.google.heart_rate.bpm:776188546157:")
+(def hr-datatype-id "com.google.heart_rate.bpm")
 
 (def google-com-oauth2
         {:authorization-uri (str login-uri "/o/oauth2/auth")
@@ -51,10 +53,18 @@
               :name "Heartily Import"
               :type "raw"
               :application {:name "Heartily"}
-              :dataType {:name "com.google.heart_rate.bpm" :field [{:name "bpm" :format "floatPoint"}]}}]
+              :dataType {:name hr-datatype-id :field [{:name "bpm" :format "floatPoint"}]}}]
     (oauth2/post datasource-uri {:oauth2 access-token
                       :body (generate-string body)
                       :headers {"Content-Type" "application/json" "encoding" "utf-8"}})))
+
+(defn create-hr-dataset [access-token dataset-id datapoints]
+  ((oauth2/wrap-oauth2 http/request)
+   {:url (str datasource-uri "/" hr-datastream-id "/datasets/" dataset-id)
+    :method :patch
+    :oauth2 access-token
+    :body (generate-string datapoints)
+    :headers {"Content-Type" "application/json" "encoding" "utf-8"}}))
 
 (defn remove-hr-datastream [access-token]
   (oauth2/delete
