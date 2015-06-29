@@ -17,7 +17,7 @@
          :redirect-uri "http://localhost:3000/oauth2_callback"
          :client-id "776188546157-5btudf4ic02tk5vsh6tdp72dpoi54b3v.apps.googleusercontent.com"
          :client-secret "Fhf-_ms1QH43MOH1CkZcxvt3"
-         :access-query-param :access_token
+         :access-query-parvam :access_token
          :scope ["https://www.googleapis.com/auth/fitness.activity.write"
                  "https://www.googleapis.com/auth/fitness.body.write"
                  "https://www.googleapis.com/auth/fitness.location.write"

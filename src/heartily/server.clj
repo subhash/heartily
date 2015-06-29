@@ -5,6 +5,7 @@
             [heartily.views :as views]
             [heartily.google-oauth :refer :all]
             [ring.util.response :as resp]
+            [ring.middleware.multipart-params :as mp]
             [clj-oauth2.client :as oauth2]
             [heartily.gpx :as gpx]
             [cheshire.core :refer [parse-string generate-string]]))
@@ -19,8 +20,10 @@
     (-> (resp/redirect "/" )
         (assoc :session session))))
 
-(defn load-data [{{access-token :access-token} :session}]
-  (let [trkpts (-> (gpx/gpx->map "" (java.io.File. "resources/data/trek1.gpx"))
+(defn load-data [{{access-token :access-token} :session
+                  {{tempfile :tempfile} :file} :params} ]
+  (let [foo (println "tempfile " tempfile)
+        trkpts (-> (gpx/gpx->map "" tempfile)
                    (get-in [:activity/track :track/track-points]))
         points (for [t trkpts]
                  {:dataTypeName hr-datatype-id
@@ -34,8 +37,10 @@
                     :minStartTimeNs mn
                     :point points}
         dataset-id (str mn "-" mx)]
+    (println "dataset-id " dataset-id)
     (create-hr-dataset access-token dataset-id datapoints)
     (resp/redirect "/")))
+
 
 (defn logout [{session :session}]
   (-> (resp/redirect "/")
@@ -53,6 +58,8 @@
   (GET "/token" {{access-token :access-token} :session} (pr-str access-token))
   (GET "/fit" {{:keys [access-token]} :session {url :url} :params}
        (get-fit-url access-token url))
+  (mp/wrap-multipart-params
+   (POST "/upload" [] load-data))
   (route/resources "/")
   (route/not-found "Not Found"))
 
