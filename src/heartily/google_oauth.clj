@@ -4,12 +4,18 @@
             [clojure.pprint :refer [pprint]]
             [clj-http.client :as http]))
 
+
+(defn datastream-id [datatype-id]
+  (str "raw:" datatype-id ":776188546157:"))
+
 (def login-uri "https://accounts.google.com")
 (def fit-uri "https://www.googleapis.com/fitness/v1/users/me")
 (def user-uri "https://www.googleapis.com/oauth2/v1/userinfo")
 (def datasource-uri (str fit-uri "/dataSources"))
-(def hr-datastream-id "raw:com.google.heart_rate.bpm:776188546157:")
 (def hr-datatype-id "com.google.heart_rate.bpm")
+(def hr-datastream-id (datastream-id hr-datatype-id))
+(def activity-datatype-id "com.google.activity.segment")
+
 
 (def google-com-oauth2
         {:authorization-uri (str login-uri "/o/oauth2/auth")
@@ -17,7 +23,7 @@
          :redirect-uri "http://localhost:3000/oauth2_callback"
          :client-id "776188546157-5btudf4ic02tk5vsh6tdp72dpoi54b3v.apps.googleusercontent.com"
          :client-secret "Fhf-_ms1QH43MOH1CkZcxvt3"
-         :access-query-parvam :access_token
+         :access-query-param :access_token
          :scope ["https://www.googleapis.com/auth/fitness.activity.write"
                  "https://www.googleapis.com/auth/fitness.body.write"
                  "https://www.googleapis.com/auth/fitness.location.write"
@@ -43,8 +49,13 @@
   (let [response (oauth2/get datasource-uri {:oauth2 access-token})]
     (get (parse-string (:body response)) "dataSource")))
 
-(defn get-hr-datastream [access-token]
-  (some #(when (= hr-datastream-id (% "dataStreamId")) %)
+(defn list-datapoints [access-token datastream-id timerange]
+  (let [response (oauth2/get (str datasource-uri "/" datastream-id "/datasets/" timerange) {:oauth2 access-token})]
+    (get (parse-string (:body response)) "point")))
+
+
+(defn get-datastream [access-token datastream-id]
+  (some #(when (= datastream-id (% "dataStreamId")) %)
         (list-data-sources access-token)))
 
 (defn create-hr-datastream [access-token]
@@ -58,9 +69,22 @@
                       :body (generate-string body)
                       :headers {"Content-Type" "application/json" "encoding" "utf-8"}})))
 
-(defn create-hr-dataset [access-token dataset-id datapoints]
+(defn create-activity-datastream [access-token]
+  (let [body {:dataStreamId (datastream-id activity-datatype-id)
+              :dataStreamName ""
+              :name "Heartily Import"
+              :type "raw"
+              :application {:name "Heartily"}
+              :dataType {:name activity-datatype-id
+                         :field [{:name "activity" :format "integer"}]}}]
+    (oauth2/post datasource-uri {:oauth2 access-token
+                      :body (generate-string body)
+                      :headers {"Content-Type" "application/json" "encoding" "utf-8"}})))
+
+
+(defn create-dataset [access-token datastream-id dataset-id datapoints]
   ((oauth2/wrap-oauth2 http/request)
-   {:url (str datasource-uri "/" hr-datastream-id "/datasets/" dataset-id)
+   {:url (str datasource-uri "/" datastream-id "/datasets/" dataset-id)
     :method :patch
     :oauth2 access-token
     :body (generate-string datapoints)

@@ -15,15 +15,17 @@
         email (get-user-email access-token)
         session (merge session {:access-token access-token :email email})]
     (when-not
-      (get-hr-datastream access-token)
+      (get-datastream access-token hr-datastream-id)
       (create-hr-datastream access-token))
+    (when-not
+      (get-datastream access-token (datastream-id activity-datatype-id))
+      (create-activity-datastream access-token))
     (-> (resp/redirect "/" )
         (assoc :session session))))
 
 (defn load-data [{{access-token :access-token} :session
                   {{tempfile :tempfile} :file} :params} ]
-  (let [foo (println "tempfile " tempfile)
-        trkpts (-> (gpx/gpx->map "" tempfile)
+  (let [trkpts (-> (gpx/gpx->map "" tempfile)
                    (get-in [:activity/track :track/track-points]))
         points (for [t trkpts]
                  {:dataTypeName hr-datatype-id
@@ -32,13 +34,22 @@
                   :startTimeNanos (* 1000000 (.getTime (:track-point/time t)))
                   :value [{:fpVal (float (:track-point/heart-rate t))}]})
         [mn mx] ((juxt (partial apply min) (partial apply max)) (map :startTimeNanos points))
-        datapoints {:dataSourceId hr-datastream-id
-                    :maxEndTimeNs mx
-                    :minStartTimeNs mn
-                    :point points}
+        hr-datapoints {:dataSourceId hr-datastream-id
+                      :maxEndTimeNs mx
+                      :minStartTimeNs mn
+                      :point points}
+        act-datapoint {:dataSourceId (datastream-id activity-datatype-id)
+                        :maxEndTimeNs mx
+                        :minStartTimeNs mn
+                        :point [{:dataTypeName activity-datatype-id
+                                :endTimeNanos mx
+                                :originDataSourceId ""
+                                :startTimeNanos mn
+                                :value [{:intVal 108}]}]}
         dataset-id (str mn "-" mx)]
+    (create-dataset access-token hr-datastream-id dataset-id hr-datapoints)
+    (create-dataset access-token (datastream-id activity-datatype-id) dataset-id act-datapoint)
     (println "dataset-id " dataset-id)
-    (create-hr-dataset access-token dataset-id datapoints)
     (resp/redirect "/")))
 
 
@@ -50,7 +61,7 @@
 (defroutes app-routes
   (GET "/" {{token :access-token email :email} :session}
        (if token
-         (views/index-page (get-hr-datastream token) email)
+         (views/index-page (list-datapoints token (datastream-id activity-datatype-id) "*") email)
          (views/login-page (:uri auth-req))))
   (GET "/oauth2_callback" [] initialize)
   (GET "/logout" [] logout)
