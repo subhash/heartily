@@ -1,6 +1,10 @@
 (ns heartily.views
   (:require [hiccup.core :refer [html h]]))
 
+(def heartrate-uri "/fit?url=/dataSources/raw:com.google.heart_rate.bpm:776188546157:/datasets")
+
+(defn start-time [a]
+  (str (java.util.Date. (/ (Long/parseLong (a "startTimeNanos")) 1000 1000))))
 
 (defn login-page [url]
   (html [:a {:href url} "Connect to Google Fit!"]))
@@ -10,11 +14,9 @@
    [:div
     [:ul
     [:li (str "Welcome " email)]
-    [:li [:a {:href "/fit?url=/dataSources/derived:com.google.calories.expended:com.google.android.gms:merge_calories_expended"} "Fun Stuff"]]
-    [:li [:a {:href "/fit?url=/dataSources/raw:com.google.heart_rate.bpm:776188546157:/datasets/1409589129450000000-1409596328020000000"} "Loaded data!"]]]
     [:form {:action "/upload" :method "post" :enctype "multipart/form-data"}
      [:input {:name "file" :type "file" :size 20}]
      [:input {:name "submit" :type "submit" :value "Load data!"}]]
-    [:ul
+    [:ul "Workouts: "
      (for [a activities]
-       [:li (str (a "startTimeNanos") " to " (a "endTimeNanos"))])]]))
+       [:li [:a {:href (str heartrate-uri "/" (a "startTimeNanos") "-" (a "endTimeNanos"))} (start-time a)]])]]]))
