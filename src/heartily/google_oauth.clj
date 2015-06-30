@@ -37,8 +37,12 @@
 (defn google-access-token [params]
   (oauth2/get-access-token google-com-oauth2 params auth-req))
 
-(defn get-fit-url [access-token url]
-  (let [response (oauth2/get (str fit-uri url) {:oauth2 access-token})]
+(defn get-fit-url [access-token url method]
+  (let [response
+        ((oauth2/wrap-oauth2 http/request)
+         {:url (str fit-uri url)
+          :oauth2 access-token
+          :method method})]
     (str "<pre>" (with-out-str (pprint (parse-string (:body response)))) "</pre>")))
 
 (defn get-user-email [access-token]

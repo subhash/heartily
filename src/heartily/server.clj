@@ -27,29 +27,30 @@
                   {{tempfile :tempfile} :file} :params} ]
   (let [trkpts (-> (gpx/gpx->map "" tempfile)
                    (get-in [:activity/track :track/track-points]))
-        points (for [t trkpts]
+        points (for [t trkpts :when (:track-point/heart-rate t)]
                  {:dataTypeName hr-datatype-id
                   :endTimeNanos (* 1000000 (.getTime (:track-point/time t)))
                   :originDataSourceId ""
                   :startTimeNanos (* 1000000 (.getTime (:track-point/time t)))
-                  :value [{:fpVal (float (:track-point/heart-rate t))}]})
-        [mn mx] ((juxt (partial apply min) (partial apply max)) (map :startTimeNanos points))
-        hr-datapoints {:dataSourceId hr-datastream-id
-                      :maxEndTimeNs mx
-                      :minStartTimeNs mn
-                      :point points}
-        act-datapoint {:dataSourceId (datastream-id activity-datatype-id)
-                        :maxEndTimeNs mx
-                        :minStartTimeNs mn
-                        :point [{:dataTypeName activity-datatype-id
-                                :endTimeNanos mx
-                                :originDataSourceId ""
-                                :startTimeNanos mn
-                                :value [{:intVal 108}]}]}
-        dataset-id (str mn "-" mx)]
-    (create-dataset access-token hr-datastream-id dataset-id hr-datapoints)
-    (create-dataset access-token (datastream-id activity-datatype-id) dataset-id act-datapoint)
-    (println "dataset-id " dataset-id)
+                  :value [{:fpVal (float (:track-point/heart-rate t))}]})]
+    (when (seq points)
+      (let [[mn mx] ((juxt (partial apply min) (partial apply max)) (map :startTimeNanos points))
+            hr-datapoints {:dataSourceId hr-datastream-id
+                           :maxEndTimeNs mx
+                           :minStartTimeNs mn
+                           :point points}
+            act-datapoint {:dataSourceId (datastream-id activity-datatype-id)
+                           :maxEndTimeNs mx
+                           :minStartTimeNs mn
+                           :point [{:dataTypeName activity-datatype-id
+                                    :endTimeNanos mx
+                                    :originDataSourceId ""
+                                    :startTimeNanos mn
+                                    :value [{:intVal 108}]}]}
+            dataset-id (str mn "-" mx)]
+        (create-dataset access-token hr-datastream-id dataset-id hr-datapoints)
+        (create-dataset access-token (datastream-id activity-datatype-id) dataset-id act-datapoint)
+        (println "dataset-id " dataset-id)))
     (resp/redirect "/")))
 
 
@@ -67,8 +68,8 @@
   (GET "/logout" [] logout)
   (GET "/load-data" [] load-data)
   (GET "/token" {{access-token :access-token} :session} (pr-str access-token))
-  (GET "/fit" {{:keys [access-token]} :session {url :url} :params}
-       (get-fit-url access-token url))
+  (GET "/fit" {{:keys [access-token]} :session {:keys [url method] :or {url "/dataSources" method :get}} :params}
+       (get-fit-url access-token url (keyword method)))
   (mp/wrap-multipart-params
    (POST "/upload" [] load-data))
   (route/resources "/")
