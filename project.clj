@@ -6,7 +6,6 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/data.zip "0.1.1"]
                  [com.datomic/datomic-free "0.9.5130"]
-                 [compojure "1.1.5"]
                  [hiccup "1.0.5"]
                  [stuarth/clj-oauth2 "0.3.2"]]
   :plugins [[lein-gorilla "0.3.4"]

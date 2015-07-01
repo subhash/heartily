@@ -17,6 +17,6 @@
     [:form {:action "/upload" :method "post" :enctype "multipart/form-data"}
      [:input {:name "file" :type "file" :size 20}]
      [:input {:name "submit" :type "submit" :value "Load data!"}]]
-    [:ul "Workouts: "
+    [:ul (str (count activities) " Workouts: ")
      (for [a activities]
        [:li [:a {:href (str heartrate-uri "/" (a "startTimeNanos") "-" (a "endTimeNanos"))} (start-time a)]])]]]))
