@@ -15,4 +15,5 @@
   :ring {:handler heartily.server/app}
   :source-paths ["src/"]
   :main ^{:skip-aot true} heartily.server
+  :min-lein-version "2.0.0"
 )
