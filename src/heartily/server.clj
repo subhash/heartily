@@ -5,6 +5,7 @@
             [heartily.views :as views]
             [heartily.google-oauth :refer :all]
             [ring.util.response :as resp]
+            [ring.adapter.jetty :as jetty]
             [ring.middleware.multipart-params :as mp]
             [clj-oauth2.client :as oauth2]
             [heartily.gpx :as gpx]
@@ -78,5 +79,7 @@
 (def app
   (handler/site app-routes))
 
+(defn -main [port]
+  (jetty/run-jetty app {:port (read-string port) :join? false}))
 
 

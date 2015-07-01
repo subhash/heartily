@@ -7,6 +7,7 @@
                  [org.clojure/data.zip "0.1.1"]
                  [com.datomic/datomic-free "0.9.5186" :exclusions [joda-time]]
                  [compojure "1.1.5"]
+                 [ring/ring-jetty-adapter "1.3.2"]
                  [hiccup "1.0.5"]
                  [stuarth/clj-oauth2 "0.3.2"]]
   :plugins [[lein-gorilla "0.3.4"]
