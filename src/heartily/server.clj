@@ -79,7 +79,7 @@
 (def app
   (handler/site app-routes))
 
-(defn -main [port]
-  (jetty/run-jetty app {:port (read-string port) :join? false}))
+(defn -main []
+  (jetty/run-jetty app {:port 80 :join? false}))
 
 
