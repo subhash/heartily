@@ -79,7 +79,6 @@
 (def app
   (handler/site app-routes))
 
-(defn -main []
-  (jetty/run-jetty app {:port 80 :join? false}))
-
-
+(defn -main [& [port]]
+  (let [port (Integer. (or port (System/getenv "PORT")))]
+    (jetty/run-jetty app {:port port :join? false})))
