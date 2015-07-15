@@ -9,14 +9,26 @@
 (defn login-page [url]
   (html [:a {:href url} "Connect to Google Fit!"]))
 
-(defn index-page [activities email]
-  (html
-   [:div
-    [:ul
-    [:li (str "Welcome " email)]
-    [:form {:action "/upload" :method "post" :enctype "multipart/form-data"}
-     [:input {:name "file" :type "file" :size 20}]
-     [:input {:name "submit" :type "submit" :value "Load data!"}]]
-    [:ul (str (count activities) " Workouts: ")
-     (for [a activities]
-       [:li [:a {:href (str heartrate-uri "/" (a "startTimeNanos") "-" (a "endTimeNanos"))} (start-time a)]])]]]))
+(defn index-page [activities email strava-link]
+  (let [foo (println "strava link " strava-link)]
+    (html
+     [:div
+      [:ul
+       [:li (str "Welcome " email)]
+       [:li [:a {:href strava-link} "Connect to Strava"]]
+       [:form {:action "/upload" :method "post" :enctype "multipart/form-data"}
+        [:input {:name "file" :type "file" :size 20}]
+        [:input {:name "submit" :type "submit" :value "Load data!"}]]
+       [:ul (str (count activities) " Workouts: ")
+        (for [a activities]
+          [:li [:a {:href (str heartrate-uri "/" (a "startTimeNanos") "-" (a "endTimeNanos"))} (start-time a)]])]]])))
+
+
+(defn strava-page [activities]
+  (let [foo 1]
+    (html
+     [:div
+      [:ul
+       [:li (count activities)]
+       [:li [:code (str activities)]]]
+      [:a {:href "/"} "<< Back to Safety!"]])))

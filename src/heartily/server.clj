@@ -13,8 +13,10 @@
 
 (defn initialize [{:keys [params session]}]
   (let [access-token (google-access-token params)
+        doo (println "google access-token" access-token)
         email (get-user-email access-token)
-        session (merge session {:access-token access-token :email email})]
+        session (merge session {:access-token access-token :email email})
+        foo (println params)]
     (when-not
       (get-datastream access-token hr-datastream-id)
       (create-hr-datastream access-token))
@@ -23,6 +25,16 @@
       (create-activity-datastream access-token))
     (-> (resp/redirect "/" )
         (assoc :session session))))
+
+(defn strava-callback [{:keys [params session]}]
+  (let [token (strava-access-token params)
+        doo (println "strava access-token" token)
+        activities (get-strava-activities token)
+        ;streams (map #(get-strava-hr-streams token (% "id")) activities)
+        ;goo (println streams)
+        ]
+    (views/strava-page activities)))
+
 
 (defn load-data [{{access-token :access-token} :session
                   {{tempfile :tempfile} :file} :params} ]
@@ -63,9 +75,13 @@
 (defroutes app-routes
   (GET "/" {{token :access-token email :email} :session}
        (if token
-         (views/index-page (list-datapoints token (datastream-id activity-datatype-id) "*") email)
+         (views/index-page
+          (list-datapoints token (datastream-id activity-datatype-id) "*")
+          email
+          (-> strava-oauth2 oauth2/make-auth-request :uri))
          (views/login-page (:uri auth-req))))
   (GET "/oauth2_callback" [] initialize)
+  (GET "/strava_callback" [] strava-callback)
   (GET "/logout" [] logout)
   (GET "/load-data" [] load-data)
   (GET "/token" {{access-token :access-token} :session} (pr-str access-token))
