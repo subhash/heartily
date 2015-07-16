@@ -23,8 +23,8 @@
    :grant-type "authorization_code"
    :scope ["view_private"]
    :token_type "bearer"
-   ;:redirect-uri "https://floating-hamlet-5403.herokuapp.com/strava_callback"
-   :redirect-uri "http://localhost:3000/strava_callback"
+   :redirect-uri "https://floating-hamlet-5403.herokuapp.com/strava_callback"
+   ;:redirect-uri "http://localhost:3000/strava_callback"
    :response-type "code"})
 
 (def auth-request (oauth2/make-auth-request strava-oauth2))
