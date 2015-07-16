@@ -28,7 +28,7 @@
   (let [foo 1]
     (html
      [:div
-      [:ul
-       [:li (count activities)]
-       [:li [:code (str activities)]]]
+      [:ul (count activities)
+       (for [a activities]
+         [:li [:div (str (:name a) " - " (:description a))]])]
       [:a {:href "/"} "<< Back to Safety!"]])))

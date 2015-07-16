@@ -4,6 +4,7 @@
             [compojure.route :as route]
             [heartily.views :as views]
             [heartily.google-oauth :refer :all]
+            [heartily.strava :as strava]
             [ring.util.response :as resp]
             [ring.adapter.jetty :as jetty]
             [ring.middleware.multipart-params :as mp]
@@ -26,14 +27,18 @@
     (-> (resp/redirect "/" )
         (assoc :session session))))
 
-(defn strava-callback [{:keys [params session]}]
-  (let [token (strava-access-token params)
-        doo (println "strava access-token" token)
-        activities (get-strava-activities token)
-        ;streams (map #(get-strava-hr-streams token (% "id")) activities)
-        ;goo (println streams)
-        ]
-    (views/strava-page activities)))
+(defn strava-callback [{params :params
+                       {google-token :access-token} :session}]
+  (let [token  (strava/access-token params)
+        activities (strava/activities (:access-token token))
+        act-datapoints (map strava/activity->datapoint activities)
+        foo (println "act-datapoints " act-datapoints)]
+    (doseq [d act-datapoints
+          :let [dataset-id (str (:minStartTimeNs d) "-" (:maxEndTimeNs d))
+                foo (println "strava datasetid " dataset-id)]]
+      (println "inside google token " google-token)
+      (create-dataset google-token d))
+    (resp/redirect "/")))
 
 
 (defn load-data [{{access-token :access-token} :session
@@ -78,7 +83,7 @@
          (views/index-page
           (list-datapoints token (datastream-id activity-datatype-id) "*")
           email
-          (-> strava-oauth2 oauth2/make-auth-request :uri))
+          (strava/auth-request :uri))
          (views/login-page (:uri auth-req))))
   (GET "/oauth2_callback" [] initialize)
   (GET "/strava_callback" [] strava-callback)
