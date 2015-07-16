@@ -10,7 +10,7 @@
   (html [:a {:href url} "Connect to Google Fit!"]))
 
 (defn index-page [activities email strava-link]
-  (let [foo (println "strava link " strava-link)]
+  (let []
     (html
      [:div
       [:ul
@@ -25,7 +25,7 @@
 
 
 (defn strava-page [activities]
-  (let [foo 1]
+  (let []
     (html
      [:div
       [:ul (count activities)

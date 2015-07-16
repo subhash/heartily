@@ -95,9 +95,7 @@
   ([access-token dataset]
    (create-dataset access-token (:dataSourceId dataset) (str (:minStartTimeNs dataset) "-" (:maxEndTimeNs dataset)) dataset))
   ([access-token datastream-id dataset-id datapoints]
-   (let [foo (println datastream-id)
-         doo (println "dataset-id " dataset-id)
-         goo (println "dp " (generate-string datapoints))]
+   (let []
      ((oauth2/wrap-oauth2 http/request)
       {:url (str datasource-uri "/" datastream-id "/datasets/" dataset-id)
        :method :patch

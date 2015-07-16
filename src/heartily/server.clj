@@ -14,10 +14,8 @@
 
 (defn initialize [{:keys [params session]}]
   (let [access-token (google-access-token params)
-        doo (println "google access-token" access-token)
         email (get-user-email access-token)
-        session (merge session {:access-token access-token :email email})
-        foo (println params)]
+        session (merge session {:access-token access-token :email email})]
     (when-not
       (get-datastream access-token hr-datastream-id)
       (create-hr-datastream access-token))
@@ -31,12 +29,8 @@
                        {google-token :access-token} :session}]
   (let [token  (strava/access-token params)
         activities (strava/activities (:access-token token))
-        act-datapoints (map strava/activity->datapoint activities)
-        foo (println "act-datapoints " act-datapoints)]
-    (doseq [d act-datapoints
-          :let [dataset-id (str (:minStartTimeNs d) "-" (:maxEndTimeNs d))
-                foo (println "strava datasetid " dataset-id)]]
-      (println "inside google token " google-token)
+        act-datapoints (mapcat strava/activity->datapoint activities)]
+    (doseq [d act-datapoints]
       (create-dataset google-token d))
     (resp/redirect "/")))
 
